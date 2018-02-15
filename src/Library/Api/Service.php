@@ -1,12 +1,12 @@
 <?php
 
-namespace FrilansInternational\Api;
+namespace Library\Api;
 
 use ArrayAccess;
-use FrilansInternational\FrilansInternationalException;
+use Library\LibException;
 use JsonSerializable;
-use FrilansInternational\FrilansInternational;
-use FrilansInternational\FrilansInternationalCollection;
+use Library\lib;
+use Library\LibCollection;
 
 abstract class Service implements ArrayAccess, JsonSerializable
 {

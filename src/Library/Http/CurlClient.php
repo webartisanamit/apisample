@@ -1,6 +1,6 @@
 <?php
 
-namespace FrilansInternational\Http;
+namespace Library\Http;
 
 class CurlClient implements ClientInterface {
 
