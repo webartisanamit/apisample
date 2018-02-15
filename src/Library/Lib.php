@@ -165,22 +165,6 @@ class Library
     }
 
     /**
-     * @return \Library\Api\TaxSchemesService
-     */
-    public function taxSchemes()
-    {
-        return $this->getRestApi('TaxSchemesService');
-    }
-
-    /**
-     * @return \Library\Api\TaxKeysService
-     */
-    public function taxKeys()
-    {
-        return $this->getRestApi('TaxKeysService');
-    }
-
-    /**
      * @return \Library\Api\CustomersService
      */
     public function customers()
@@ -189,59 +173,11 @@ class Library
     }
 
     /**
-     * @return \Library\Api\CurrencyService
-     */
-    public function currencies()
-    {
-        return $this->getRestApi('CurrencyService');
-    }
-
-    /**
-     * @return \Library\Api\LanguagesService
-     */
-    public function languages()
-    {
-        return $this->getRestApi('LanguagesService');
-    }
-
-    /**
-     * @return \Library\Api\VatService
-     */
-    public function vat()
-    {
-        return $this->getRestApi('VatService');
-    }
-
-    /**
-     * @return \Library\Api\ProfessionsService
-     */
-    public function professions()
-    {
-        return $this->getRestApi('ProfessionsService');
-    }
-
-    /**
      * @return \Library\Api\ProfileService
      */
     public function profiles()
     {
         return $this->getRestApi('ProfileService');
-    }
-
-    /**
-     * @return \Library\Api\OrderService
-     */
-    public function orders()
-    {
-        return $this->getRestApi('OrderService');
-    }
-
-    /**
-     * @return \Library\Api\CalculationsService
-     */
-    public function calculations()
-    {
-        return $this->getRestApi('CalculationsService');
     }
 
     /**
