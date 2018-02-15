@@ -18,29 +18,12 @@ $lib = new \Library\Lib(array(
 	'redirectUri'  => 'http://example.com/',
 ));
 
-If the serialized token is available in the session storage, we tell the SDK
-to use that token for subsequent requests.
-
-if (isset($_SESSION['token'])) {
-	$lib->setToken(unserialize($_SESSION['token']));
-}
-
-To get a access token
-if (!isset($_SESSION['token']) and !$lib->getToken()) {
-	$_SESSION['token'] = serialize($lib->requestAccessToken());
-}
-
-if ($lib->getToken()) {
-	// Save the serialized token to the current session for subsequent requests
-	$_SESSION['token'] = serialize($lib->getToken());
-}
-
 --------------------------------------------------------------------------------
 ## Making REST Requests
 
-The PHP SDK is setup to allow easy access to REST endpoints. In general, a single result is returned as a Class representing that object, and multiple objects are returned as an FrilansInternational Collection, which is simply a wrapper around an array of results making them easier to manage.
+The PHP SDK is setup to allow easy access to REST endpoints. In general, a single result is returned as a Class representing that object, and multiple objects are returned as an Sample Collection, which is simply a wrapper around an array of results making them easier to manage.
 
-The standard REST operations are mapped to a series of simple functions. We'll use the Profile service for our examples, but the operations below work on all documented FrilansInternational REST services.
+The standard REST operations are mapped to a series of simple functions. We'll use the Profile service for our examples, but the operations below work on all documented Sample REST services.
 
 To retrieve all profiles:
 $profile = $lib->profiles()->all();
@@ -75,4 +58,4 @@ $profile = $lib->profiles()->upload([
 ]);
 
 And finally, to delete the profile:
-$lib->profiles()->delete(1);
+$lib->profiles()->delete($id);
