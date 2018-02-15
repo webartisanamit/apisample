@@ -2,8 +2,6 @@
 
 require_once '../vendor/autoload.php';
 
-if(empty(session_id())) session_start();
-
 $lib = new \Library\Lib(array(
   'apiKey' => 'XXXX',
   'secretKey' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
