@@ -12,50 +12,50 @@ if(empty(session_id();)) session_start();
 
 require_once 'vendor/autoload.php';
 
-$lib = new \Library\Lib(array(
-	'client_id'     => 'XXX',
-	'client_secret' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-	'redirectUri'  => 'http://example.com/',
+$lib = new \Library\Lib(array(<br>
+	'client_id'     => 'XXX',<br>
+	'client_secret' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',<br>
+	'redirectUri'  => 'http://example.com/',<br>
 ));
 
 --------------------------------------------------------------------------------
 ## Making REST Requests
 
-The PHP SDK is setup to allow easy access to REST endpoints. In general, a single result is returned as a Class representing that object, and multiple objects are returned as an Sample Collection, which is simply a wrapper around an array of results making them easier to manage.
+The PHP SDK is setup to allow easy access to REST endpoints. In general, a single result is returned as a Class representing that object, and multiple objects are returned as an Sample Collection, which is simply a wrapper around an array of results making them easier to manage.<br>
 
-The standard REST operations are mapped to a series of simple functions. We'll use the Profile service for our examples, but the operations below work on all documented Sample REST services.
+The standard REST operations are mapped to a series of simple functions. We'll use the Profile service for our examples, but the operations below work on all documented Sample REST services.<br>
 
-To retrieve all profiles:
+To retrieve all profiles:<br>
 $profile = $lib->profiles()->all();
-
-To retrieve profiles with filter:
+<br>
+To retrieve profiles with filter:<br>
 $profiles = $lib->profiles()->filter('country_id', '=', 42)->all();
-
-To retrieve profiles with include:
+<br>
+To retrieve profiles with include:<br>
 $profiles = $lib->profiles()->include('customers')->all();
-
-To retrieve a single profile:
+<br>
+To retrieve a single profile:<br>
 $profile = $lib->profiles()->find($profileId);
-
-To query only completed profile:
+<br>
+To query only completed profile:<br>
 $profile = $lib->profiles()->where('email', 'example@gmail.com')->get();
-
-$attributes = [
-    'name' => 'profile name',
-    'email' => 'example@gmail.com'
+<br>
+$attributes = [<br>
+    'name' => 'profile name',<br>
+    'email' => 'example@gmail.com'<br>
 ];
-
-To create a profile:
+<br>
+To create a profile:<br>
 $profile = $lib->profiles()->create($attributes);
 
-To update a profile:
+To update a profile:<br>
 $profile = $lib->profiles()->update($attributes, $profileId);
 
-To upload a file
-$profile = $lib->profiles()->upload([
-   'id' => $profileId,
-   'file' => $filePath
-]);
+To upload a file<br>
+$profile = $lib->profiles()->upload([<br>
+   'id' => $profileId,<br>
+   'file' => $filePath<br>
+]);<br>
 
-And finally, to delete the profile:
+And finally, to delete the profile:<br>
 $lib->profiles()->delete($id);
